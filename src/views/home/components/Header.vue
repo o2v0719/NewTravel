@@ -38,7 +38,7 @@ export default {
   background-color $bgColor
   line-height $headerHeight
   color #fff
-  height 0.86rem
+  height $headerHeight
   .header-left
     width 0.64rem
     float left
