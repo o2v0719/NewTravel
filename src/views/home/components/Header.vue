@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        <span class="iconfont iconjiantou"></span>城市
+        <span class="iconfont iconjiantou"></span>{{this.city}}
       </div>
     </router-link>
   </div>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: 'HomeHeader',
+  props: {
+    city: String
+  },
   data () {
     return {
     }
