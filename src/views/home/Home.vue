@@ -1,18 +1,19 @@
 <template>
   <div>
-    <div class="home">
-      HomeWorld
-    </div>
-
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
-//import x from ''
+import HomeHeader from './components/Header'
 export default {
   name: 'Home',
+  components: {
+    HomeHeader
+  },
   data () {
     return {
+
     }
   },
 }

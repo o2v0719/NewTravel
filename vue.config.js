@@ -2,7 +2,7 @@ const path = require('path')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
-////阻止项目启动时，在浏览器console面板里面生成的生产提示
+
 module.exports = {
   /* 部署生产环境和开发环境下的URL：可对当前环境进行区分，baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
   /* baseUrl: process.env.NODE_ENV === 'production' ? './' : '/' */
@@ -40,11 +40,12 @@ module.exports = {
     }
   },
 
-  /* 别名设置 `在这里插入代码片`*/
+  /* 别名设置*/
+  // ！！！！注意前面引用的时候要加波浪线！！！！！
   chainWebpack: config => {
     config.resolve.alias
-      .set('src', resolve('src'))
-      .set('assets', resolve('src/assets'))
+      .set('@', resolve('src'))
+      .set('styles', resolve('src/assets/styles'))
       .set('components', resolve('src/components'))
   }
 }
