@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item,key) in cities" :key="key">
+      <div class="area" v-for="(item,key) in cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</div>
@@ -35,16 +35,30 @@ export default {
   name: 'CityList',
   props: {
     hot: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted () {
     //实例被挂载后调用
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
   },
-  data () {
-    return {
+  // 当需要在数据变化时执行异步或开销较大的操作时，用watch监听器。
+  watch: {
+    // 侦听器[letter 要和 props 中的letter保持一致]
+    letter () {
+      // console.log(this.letter)
+      if (this.letter) {
+        // console.log(this.$refs)
+        // 【找到指定的dom元素】
+        const element = this.$refs[this.letter][0]
+        // console.log(element)
+        // 【跳转到指定的dom:利用scroll插件提供的API】
+        this.scroll.scrollToElement(element)
+      }
     }
-  },
+  }
 }
 </script>
 <style lang="stylus" scoped>
