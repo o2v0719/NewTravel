@@ -5,16 +5,17 @@
     </div>
     <div class="search-content" v-show="keyword" ref="search">
       <ul>
-        <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+        <li class="search-item border-bottom" v-for="item in list" :key="item.id" @click="handleCityClick(item.name)">{{item.name}}</li>
         <li class="search-item border-bottom" v-show="showFlag">没有找到匹配数据</li>
       </ul>
     </div>
   </div>
-
 </template>
 
 <script>
 import Bscroll from 'better-scroll'
+// 把集中的vuex中的状态管理函数映射过来
+import { mapMutations } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -27,6 +28,14 @@ export default {
       timer: null,
       showFlag: false
     }
+  },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      this.$router.push('/')// 编程式导航实现页面跳转
+    },
+    ...mapMutations(['changeCity'])
   },
   // 性能开销大，使用watch侦听器
   watch: {
@@ -59,7 +68,9 @@ export default {
   },
   mounted () {
     // 确保在输入框输入字符后，下面的content区仍然可以滚动
-    this.scroll = new Bscroll(this.$refs.search)
+    this.scroll = new Bscroll(this.$refs.search, {
+      click: true
+    })
   }
 }
 </script>

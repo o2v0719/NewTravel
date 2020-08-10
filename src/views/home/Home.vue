@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Home父组件向下分发传递数据给各子组件 -->
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -39,7 +39,6 @@ export default {
       // 将ajax返回的数据绑定到本组件,ret 表示后端正确返回了结果
       res = res.data
       if (res.ret && res.data) {
-        this.city = res.data.city
         this.swiperList = res.data.swiperList
         this.iconList = res.data.iconList
         this.recommendList = res.data.recommendList
@@ -49,7 +48,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
