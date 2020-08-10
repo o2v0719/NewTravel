@@ -50,7 +50,7 @@ export default {
         if (this.timer) {
           clearTimeout(this.timer)
         }
-        // 函数节流: 在timer存在值的以后 又触发了事件，则清除该事件。直到8ms周期以后
+        // 函数节流: 在timer存在值以后 又触发了事件，则清除该事件。直到8ms周期以后
         this.timer = setTimeout(() => {
           const touchY = e.touches[0].clientY - 79
           const index = Math.floor((touchY - this.startY) / 20)
