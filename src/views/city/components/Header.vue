@@ -11,7 +11,7 @@
 <script>
 //import x from ''
 export default {
-  name: 'Unnamed',
+  name: 'CityHeader',
   data () {
     return {
     }
