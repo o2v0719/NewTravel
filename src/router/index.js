@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/home/Home'
 import City from '@/views/city/City'
+import Detail from '@/views/detail/Detail'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +15,12 @@ const routes = [
     path: '/city',
     name: 'City',
     component: City
+  },
+  {
+    //动态路由
+    path: '/detail/:id',
+    name: 'Detail',
+    component: Detail
   }
 ]
 
