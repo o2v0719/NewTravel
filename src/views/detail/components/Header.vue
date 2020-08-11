@@ -42,8 +42,14 @@ export default {
       }
     }
   },
+  // 绑定了keep-alive产生的钩子activated和deactivated
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    // 给全局window解绑：当离开当前页面时，不再触发scroll事件
+    // 【官方解释deactivated】:被 keep-alive 缓存的组件停用时调用
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
