@@ -1,4 +1,3 @@
-```
 new-travel
 ├── README.md
 ├── babel.config.js
@@ -14,17 +13,31 @@ new-travel
 ├── src
 │   ├── App.vue
 │   ├── assets
-│   │   └── logo.png
-│   ├── components
+│   │   └── styles
+│   │       ├── border.css
+│   │       ├── mixins.styl
+│   │       ├── reset.css
+│   │       └── varibles.styl
+│   ├── common
+│   │   ├── fade
+│   │   │   └── FadeAnimation.vue
+│   │   └── gallery
+│   │       └── Gallery.vue
 │   ├── main.js
 │   ├── router
 │   │   └── index.js
 │   ├── store
-│   │   └── index.js
+│   │   ├── index.js
+│   │   ├── mutations.js
+│   │   └── state.js
 │   └── views
-│       ├── home
-│       │   └── Home.vue
-│       └── list
-│           └── List.vue
+│       ├── city
+│       │   ├── City.vue
+│       │   └── components
+│       ├── detail
+│       │   ├── Detail.vue
+│       │   └── components
+│       └── home
+│           ├── Home.vue
+│           └── components
 └── vue.config.js
-```
