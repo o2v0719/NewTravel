@@ -1,3 +1,4 @@
+```
 new-travel
 ├── README.md
 ├── babel.config.js
@@ -41,3 +42,4 @@ new-travel
 │           ├── Home.vue
 │           └── components
 └── vue.config.js
+```
