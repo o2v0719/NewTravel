@@ -6,16 +6,21 @@
       <div class="banner-number"><span class="iconfont icontupian1 banner-icon"></span>
         {{this.bannerImgs.length}}</div>
     </div>
-    <common-gallery :imgs="bannerImgs" v-show="showGallery" @close="handleGalleryClose"></common-gallery>
+    <fade-animation>
+      <!-- common-gallery 作为插芯，插入到fade-animation组件中 -->
+      <common-gallery :imgs="bannerImgs" v-show="showGallery" @close="handleGalleryClose"></common-gallery>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   },
   props: {
     sightName: String,
@@ -24,7 +29,7 @@ export default {
   },
   data () {
     return {
-      imgs: ["http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg", "http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_800x800_9ef05ee7.png"],
+      imgs: [],
       showGallery: false
     }
   },

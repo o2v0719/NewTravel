@@ -28,7 +28,8 @@ export default {
   },
   methods: {
     handleScroll () {
-      const top = document.documentElement.scrollTop
+      // 移动端兼容
+      const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
       // 以60为起点，向140过渡
       if (top > 60) {
         let opacity = top / 140
