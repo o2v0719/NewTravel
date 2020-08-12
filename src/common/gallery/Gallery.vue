@@ -3,7 +3,8 @@
   <div class="container" @click.stop="handleGalleryClick">
     <div class="wrapper">
       <!-- 使用vue-awesome-swiper实现轮播 -->
-      <swiper :options="swiperOptions">
+      <!-- v-if="list.length": 当list数组还是空的时候，不要渲染，以防干扰轮播图的原始顺序 -->
+      <swiper :options="swiperOptions" v-if="showSwiper">
         <swiper-slide v-for="(item,index) in imgs" :key="index">
           <img :src="item" class="swiper-img gallery-img">
         </swiper-slide>
@@ -35,6 +36,11 @@ export default {
         observeParents: true,
         observer: true
       }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.imgs.length
     }
   },
   methods: {

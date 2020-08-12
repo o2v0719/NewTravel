@@ -25,7 +25,13 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+
+  //为了解决滑动某页，其他页面也一并发生滑动：
+  scrollBehavior(to, from, savedPosition) {
+    // 页面切换时，显示出来的页面始终回到最顶部
+    return { x: 0, y: 0 }
+  }
 })
 
 export default router
