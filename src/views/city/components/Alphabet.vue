@@ -2,7 +2,7 @@
   <div>
     <ul class="list">
       <!-- 注意移动端触摸事件：touchstart，touchmove，touchend -->
-      <li class="item" v-for="item in letters" :key="item" :ref="item" @click="handleLetterClick" @touchstart="handleTouchStart"
+      <li class="item" v-for="item in letters" :key="item" :ref="item" @click="handleLetterClick" @touchstart.prevent="handleTouchStart"
         @touchmove.prevent="handleTouchMove" @touchend="handleTouchEnd">{{item}}</li>
     </ul>
   </div>
@@ -32,8 +32,11 @@ export default {
   },
   // 当向alphabet组件传入的数据发生变化的时候，alphabet组件就会重新渲染，重新渲染后就会执行updated这个生命周期函数
   // 官方：由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。
+  // 真机测试发现需要把updated钩子改为activated更合适
   updated () {
+
     this.startY = this.$refs['A'][0].offsetTop
+
   },
   methods: {
     handleLetterClick (e) {
