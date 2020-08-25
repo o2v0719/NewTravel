@@ -1,3 +1,5 @@
+> 最后提交的 master 分支为上线版本
+
 ```
 new-travel
 ├── README.md
@@ -843,8 +845,11 @@ module.exports = {
 
 - <2> 在路由 router/index.js 中设置"base:'/travel/'"
 
-- <3> 在 index.html 中加入 <meta base="/new/">
-- <4> 修改服务器端 nginx.conf
+- <3> 在 index.html 中加入 <meta base="/travel/">
+
+- <4> 修改 vue 文件中的 axios 请求地址，在前面加上'/travel/'
+
+- <5> 修改服务器端 nginx.conf
 
 ```.conf
 server {
@@ -876,10 +881,10 @@ server {
 	}
 ```
 
-- <5> 服务器端重启 nginx
+- <6> 服务器端重启 nginx
 
 ```bash
 service nginx restart
 ```
 
-- <6> 通过访问 47.101.40.159/travel/ 即可访问到当前项目
+- <7> 通过访问 47.101.40.159/travel/ 即可访问到当前项目
