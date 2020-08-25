@@ -30,8 +30,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // 要把项目部署到travel目录下
+  base: '/travel/',
   routes,
-
   //为了解决滑动某页，其他页面也一并发生滑动：
   scrollBehavior(to, from, savedPosition) {
     // 页面切换时，显示出来的页面始终回到最顶部

@@ -32,7 +32,7 @@ export default {
     // 1. ajax请求数据
     getDetailInfo () {
       // axios.get(`/api/detail.json?id=${this.$route.params.id}`)
-      axios.get('/api/detail.json', {
+      axios.get('/travel/api/detail.json', {
         params: {
           id: this.$route.params.id
         }
