@@ -46,7 +46,7 @@ new-travel
 └── vue.config.js
 ```
 
-# 基于 Vue-cli4 构建去哪儿网移动端项目
+# 去哪儿网移动端项目_学习开发记录
 
 > 开发时间：2020.8.5
 > 开发脚手架：Vue-cli4
@@ -310,7 +310,7 @@ npm install axios --save
 - 注意 swiper 获取的数据，默认轮播首页显示的是最后一页，这是因为一开始是没有从父组件中获取到数据的，给 swiper 绑定 v-if 指令：v-if="list.length"，只有当 list 数组不为空的时候才会渲染 swiper 组件。这样可以解决 swiper 组件首页显示的 bug。
 - 提交代码
 
-###4.2 城市选择页面开发
+### 4.2 城市选择页面开发
 
 #### 4.2.1 城市选择页面路由配置
 
@@ -417,7 +417,7 @@ watch: {// 侦听器
 
 - 提交代码。
 
-####4.2.6 一级组件联动。利用 Vuex 实现数据共享。
+#### 4.2.6 一级组件联动。利用 Vuex 实现数据共享。
 
 - 新建分支。
 - 在首页和城市选择页面实现数据共享。store/index.js 中。new 出来的 store 实例里面，state 中存放的数据，可以在子组件中通过 this.\$store.state 访问到。据此更改 home/components/Header.vue，home/Home.vue,city/components/list.vue。
