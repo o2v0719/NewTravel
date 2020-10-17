@@ -62,7 +62,7 @@ new-travel
 
 ---
 
-## 1.2 使用 vue-cli4 初始化项目
+### 1.2 使用 vue-cli4 初始化项目
 
 - 创建项目
 
@@ -73,7 +73,7 @@ vue create new-travel
 - 勾选配置
   > Babel+vue-router+vuex+Stylus+ESlint
 
-## 1.3 关联本地 vue 与远程仓库
+### 1.3 关联本地 vue 与远程仓库
 
 > 已有仓库与远程关联
 
